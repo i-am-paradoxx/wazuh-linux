@@ -46,6 +46,7 @@ or
 - https://localhost
 
 # Wazuh-agent
-i.e end devices
+Wazuh agents are software components installed on the endpoints or end devices (servers, workstations, cloud instances, etc.) you want to monitor. 
+They collect security data and log information from the host system and send it to the Wazuh Manager for analysis and further processing.
 
 visit https://documentation.wazuh.com/current/getting-started/index.html for more details.
