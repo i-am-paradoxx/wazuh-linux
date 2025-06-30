@@ -2,10 +2,19 @@
 
 currently Wazuh supports the following operating system versions:
 
-Ubuntu 16.04, 18.04, 20.04, 22.04, 24.04 /n
-Red Hat Enterprise Linux 7, 8, 9
-CentOS 7, 8
-Amazon Linux 2, Amazon Linux 2023
+- Ubuntu 16.04  
+- Ubuntu 18.04  
+- Ubuntu 20.04  
+- Ubuntu 22.04  
+- Ubuntu 24.04  
+- Red Hat Enterprise Linux 7  
+- Red Hat Enterprise Linux 8  
+- Red Hat Enterprise Linux 9  
+- CentOS 7  
+- CentOS 8  
+- Amazon Linux 2  
+- Amazon Linux 2023  
+
 
 i will be using Ubuntu 22.04
 For Wazuh Managaer and Wazuh Dashboard 
