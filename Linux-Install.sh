@@ -1,7 +1,8 @@
 #!/bin/bash
 # install_wazuh_agent_clean.sh – Clean install of Wazuh Agent (removes manager/agent if present)
 
-read -p "Enter your Wazuh Manager IP: " WAZUH_MANAGER
+read -rp "Enter your Wazuh Manager IP: " WAZUH_MANAGER < /dev/tty
+
 
 echo "====================================="
 echo "[*] Checking for existing Wazuh packages..."
