@@ -51,6 +51,11 @@ They collect security data and log information from the host system and send it 
 
 Download and excute the following script
 
+
+sudo systemctl daemon-reload
+sudo systemctl enable wazuh-agent
+sudo systemctl start wazuh-agent
+
 ```
 sudo curl -s https://raw.githubusercontent.com/iamsinnerr/wazuhh/main/Linux-Install.sh | bash
 ```
