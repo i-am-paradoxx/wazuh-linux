@@ -24,11 +24,7 @@ fi
 
 # Download the agent
 echo "[*] Downloading Wazuh Agent..."
-curl -so wazuh-agent.deb https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_4.5.4-1_amd64.deb
-
-# Install agent with environment variables
-echo "[*] Installing Wazuh Agent..."
-sudo WAZUH_MANAGER="$WAZUH_MANAGER" WAZUH_AGENT_GROUP="default" dpkg -i ./wazuh-agent.deb
+curl -so wazuh-agent.deb https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_4.5.4-1_amd64.deb && sudo WAZUH_MANAGER="$WAZUH_MANAGER" WAZUH_AGENT_GROUP="default" dpkg -i ./wazuh-agent.deb
 
 # Enable and start agent
 echo "[*] Enabling and starting Wazuh Agent..."
