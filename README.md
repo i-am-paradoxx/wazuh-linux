@@ -35,8 +35,8 @@ sudo curl -sO https://packages.wazuh.com/4.5/wazuh-install.sh && sudo bash ./waz
 
 after running the command wait for few minutes you will be provided with login credential in the folowing format,
 
-- User: admin
-- Password: <ADMIN_PASSWORD>
+- User : admin
+- Password : <ADMIN_PASSWORD>
 
 Access the Wazuh web interface with your admin user credentials. 
 This is the default administrator account for the Wazuh indexer and it allows you to access the Wazuh dashboard.
