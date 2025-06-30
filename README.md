@@ -52,7 +52,7 @@ They collect security data and log information from the host system and send it 
 Download and excute the following script
 
 ```
-sudo curl -s https://raw.githubusercontent.com/iamsinnerr/wazuhh/main/Linux-Install.sh | sudo bash
+sudo curl -s https://raw.githubusercontent.com/iamsinnerr/wazuhh/main/Linux-Install.sh | bash
 ```
 
 
