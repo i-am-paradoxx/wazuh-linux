@@ -55,4 +55,4 @@ Download and excute the following script
 sudo curl -s https://raw.githubusercontent.com/iamsinnerr/wazuhh/main/Linux-Install.sh | sudo bash
 ```
 
-visit https://documentation.wazuh.com/current/getting-started/index.html for more details.
+visit [Wazuh Documentaion] (https://documentation.wazuh.com/current/getting-started/index.html) for more details.
