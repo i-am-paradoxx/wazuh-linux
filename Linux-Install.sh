@@ -1,40 +1,16 @@
 #!/bin/bash
+# install_wazuh_agent_manual.sh
 
-# Wazuh Agent Installation Script for Linux
+read -rp "Enter the IP address of your Wazuh Manager: " MANAGER_IP
 
-# Update and install required packages
-echo "Updating system and installing required dependencies..."
-sudo apt update -y && sudo apt upgrade -y
-sudo apt install curl apt-transport-https lsb-release -y
+echo "[*] Downloading Wazuh Agent .deb package..."
+curl -so wazuh-agent.deb https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_4.5.4-1_amd64.deb
 
-# Add the Wazuh repository
-echo "Adding Wazuh repository..."
-curl -s https://packages.wazuh.com/4.5/wazuh-key.gpg | sudo apt-key add -
-echo "deb https://packages.wazuh.com/4.5/apt/ stable main" | sudo tee /etc/apt/sources.list.d/wazuh.list
+echo "[*] Installing Wazuh Agent with Manager IP: $MANAGER_IP"
+sudo WAZUH_MANAGER="$MANAGER_IP" WAZUH_AGENT_GROUP="default" dpkg -i ./wazuh-agent.deb
 
-
-# Install Wazuh agent
-echo "Installing Wazuh agent..."
-sudo apt update -y
-sudo apt install wazuh-agent -y
-
-# Ask for the Wazuh Manager IP
-echo "Please enter the IP address of your Wazuh Manager:"
-read -p "Wazuh Manager IP: " manager_ip
-
-# Update the Wazuh agent configuration file
-echo "Configuring the Wazuh agent to connect to the Wazuh Manager..."
-sudo sed -i "s|<server>127.0.0.1</server>|<server>${manager_ip}</server>|" /var/ossec/etc/ossec.conf
-
-# Start the Wazuh agent
-echo "Starting Wazuh agent..."
+echo "[*] Enabling and starting Wazuh Agent..."
 sudo systemctl enable wazuh-agent
 sudo systemctl start wazuh-agent
 
-# Check the status of the Wazuh agent
-echo "Checking Wazuh agent status..."
-sudo systemctl status wazuh-agent
-
-# Output instructions
-echo "Wazuh agent installation is complete. The agent is now configured to connect to the Wazuh Manager at ${manager_ip}."
-echo "You can verify the agent's status by running: sudo systemctl status wazuh-agent"
+echo "[✔] Wazuh Agent installed and connected to manager at $MANAGER_IP"
