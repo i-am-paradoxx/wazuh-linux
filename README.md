@@ -2,10 +2,10 @@
 
 currently Wazuh supports the following operating system versions:
 
-# Ubuntu 16.04, 18.04, 20.04, 22.04, 24.04
-# Red Hat Enterprise Linux 7, 8, 9
-# CentOS 7, 8
-# Amazon Linux 2, Amazon Linux 2023
+Ubuntu 16.04, 18.04, 20.04, 22.04, 24.04
+Red Hat Enterprise Linux 7, 8, 9
+CentOS 7, 8
+Amazon Linux 2, Amazon Linux 2023
 
 i will be using Ubuntu 22.04
 For Wazuh Managaer and Wazuh Dashboard 
@@ -25,14 +25,14 @@ sudo curl -sO https://packages.wazuh.com/4.5/wazuh-install.sh && sudo bash ./waz
 
 after running the command wait for few minutes you will be provided with login credential in the folowing format,
 
-# User: admin
-# Password: <ADMIN_PASSWORD>
+ User: admin
+Password: <ADMIN_PASSWORD>
 
 Access the Wazuh web interface with your admin user credentials. 
 This is the default administrator account for the Wazuh indexer and it allows you to access the Wazuh dashboard.
 You can access the dashboard by navigating to:
-# https://<WAZUH_DASHBOARD_IP_ADDRESS>
+https://<WAZUH_DASHBOARD_IP_ADDRESS>
 or 
-# https://localhost:<port no>
+https://localhost
 
 for agent 
