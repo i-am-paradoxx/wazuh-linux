@@ -40,8 +40,8 @@ after running the command wait for few minutes you will be provided with login c
 Access the Wazuh web interface with your admin user credentials. 
 This is the default administrator account for the Wazuh indexer and it allows you to access the Wazuh dashboard.
 You can access the dashboard by navigating to:
-https://<WAZUH_DASHBOARD_IP_ADDRESS>
+- https://<WAZUH_DASHBOARD_IP_ADDRESS>
 or 
-https://localhost
+- https://localhost
 
 for agent 
