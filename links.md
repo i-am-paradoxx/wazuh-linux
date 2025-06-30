@@ -1,4 +1,4 @@
 - Wazuh Home Page
-  https://wazuh.com/
+- https://wazuh.com/
 
 W
