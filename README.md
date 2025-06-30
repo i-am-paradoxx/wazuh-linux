@@ -1,5 +1,6 @@
-# wazuhh
+# wazuh
 
+# Wazuh Manager And Dashboard
 currently Wazuh supports the following operating system versions:
 
 - Ubuntu 16.04  
