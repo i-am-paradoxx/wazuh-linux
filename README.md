@@ -44,4 +44,7 @@ You can access the dashboard by navigating to:
 or 
 - https://localhost
 
-for agent 
+# For Wazuh-agent
+i.e end devices
+
+visit https://documentation.wazuh.com/current/getting-started/index.html for more details.
