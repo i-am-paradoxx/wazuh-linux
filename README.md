@@ -18,7 +18,7 @@ currently Wazuh supports the following operating system versions:
 
 
 i will be using Ubuntu 22.04
-For `Wazuh Managaer` and Wazuh Dashboard 
+For Wazuh Managaer and Wazuh Dashboard 
 
 Make sure you have curl install if not then use the following command
 
@@ -35,8 +35,8 @@ sudo curl -sO https://packages.wazuh.com/4.5/wazuh-install.sh && sudo bash ./waz
 
 after running the command wait for few minutes you will be provided with login credential in the following format,
 
-- User : admin
-- Password : <ADMIN_PASSWORD>
+- `User : admin`
+- `Password : <ADMIN_PASSWORD>`
 
 Access the Wazuh web interface with your admin user credentials. 
 This is the default administrator account for the Wazuh indexer and it allows you to access the Wazuh dashboard.
