@@ -1,6 +1,6 @@
 # wazuhh
 
-for ubuntu 22.04 only
+##for ubuntu 22.04 only##
 
 for manager only
 sudo apt update -y && upgrade -y
