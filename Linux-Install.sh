@@ -1,37 +1,46 @@
 #!/bin/bash
-# install_or_replace_wazuh_agent.sh – Installs or replaces Wazuh Agent
+# install_wazuh_agent_clean.sh – Clean install of Wazuh Agent (removes manager/agent if present)
 
 read -p "Enter your Wazuh Manager IP: " WAZUH_MANAGER
 
-# If wazuh-agent is already installed
-if dpkg -l | grep -qw wazuh-agent; then
-    echo "[!] Wazuh Agent is already installed."
-    echo "[*] Stopping and removing existing agent..."
+echo "====================================="
+echo "[*] Checking for existing Wazuh packages..."
+echo "====================================="
 
+# Remove existing Wazuh Agent if found
+if dpkg -l | grep -qw wazuh-agent; then
+    echo "[!] Wazuh Agent detected. Removing..."
     sudo systemctl stop wazuh-agent
     sudo systemctl disable wazuh-agent
     sudo dpkg --purge wazuh-agent
-
-    echo "[✔] Existing Wazuh Agent removed."
+    echo "[✔] Wazuh Agent removed."
 fi
 
-# Check if Wazuh Manager is installed (conflict)
+# Remove existing Wazuh Manager if found
 if dpkg -l | grep -qw wazuh-manager; then
-    echo "[⚠️] Wazuh Manager is installed on this system."
-    echo "[✖] Cannot install Agent on the same machine. Aborting."
-    exit 1
+    echo "[!] Wazuh Manager detected. Removing..."
+    sudo systemctl stop wazuh-manager
+    sudo systemctl disable wazuh-manager
+    sudo dpkg --purge wazuh-manager
+    echo "[✔] Wazuh Manager removed."
 fi
 
-# Download the agent
-echo "[*] Downloading Wazuh Agent..."
-curl -so wazuh-agent.deb https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_4.5.4-1_amd64.deb && sudo WAZUH_MANAGER="$WAZUH_MANAGER" WAZUH_AGENT_GROUP="default" dpkg -i ./wazuh-agent.deb
+# Download latest supported Wazuh Agent package
+echo "[*] Downloading Wazuh Agent .deb..."
+curl -so wazuh-agent.deb https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_4.5.4-1_amd64.deb
 
-# Enable and start agent
+# Install Wazuh Agent with user-defined manager IP
+echo "[*] Installing Wazuh Agent with Manager IP: $WAZUH_MANAGER"
+sudo WAZUH_MANAGER="$WAZUH_MANAGER" WAZUH_AGENT_GROUP="default" dpkg -i ./wazuh-agent.deb
+
+# Enable and start the agent
 echo "[*] Enabling and starting Wazuh Agent..."
 sudo systemctl enable wazuh-agent
 sudo systemctl start wazuh-agent
 
-# Cleanup
+# Clean up installer
 rm -f wazuh-agent.deb
 
-echo "[✔] Wazuh Agent is now installed and connected to $WAZUH_MANAGER"
+echo "====================================="
+echo "[✔] Wazuh Agent installed and connected to $WAZUH_MANAGER"
+echo "====================================="
