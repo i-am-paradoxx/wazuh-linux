@@ -18,7 +18,7 @@ currently Wazuh supports the following operating system versions:
 
 
 i will be using Ubuntu 22.04
-For Wazuh Managaer and Wazuh Dashboard 
+For `Wazuh Managaer` and Wazuh Dashboard 
 
 Make sure you have curl install if not then use the following command
 
