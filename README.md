@@ -27,13 +27,13 @@ sudo apt update -y && upgrade -y
 sudo apt install curl -y
 ```
 
-To install Wazuh manager Wazuh Managaer and Wazuh Dashboard on Ubuntu 22.04 use the folowing command
+To install Wazuh manager Wazuh Managaer and Wazuh Dashboard on Ubuntu 22.04 use the following command
 
 ```
 sudo curl -sO https://packages.wazuh.com/4.5/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
 ```
 
-after running the command wait for few minutes you will be provided with login credential in the folowing format,
+after running the command wait for few minutes you will be provided with login credential in the following format,
 
 - User : admin
 - Password : <ADMIN_PASSWORD>
@@ -48,5 +48,11 @@ or
 # Wazuh-agent
 Wazuh agents are software components installed on the endpoints or end devices (servers, workstations, cloud instances, etc.) you want to monitor. 
 They collect security data and log information from the host system and send it to the Wazuh Manager for analysis and further processing.
+
+Download and excute the following script
+
+```
+sudo curl -s https://raw.githubusercontent.com/iamsinnerr/wazuhh/main/Linux-Install.sh | sudo bash
+```
 
 visit https://documentation.wazuh.com/current/getting-started/index.html for more details.
