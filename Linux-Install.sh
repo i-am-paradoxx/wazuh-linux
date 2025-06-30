@@ -8,20 +8,20 @@ echo "Checking for existing Wazuh packages..."
 
 # Remove existing Wazuh Agent if found
 if dpkg -l | grep -qw wazuh-agent; then
-    echo "[!] Wazuh Agent detected. Removing..."
+    echo "Wazuh Agent detected. Removing..."
     sudo systemctl stop wazuh-agent
     sudo systemctl disable wazuh-agent
     sudo dpkg --purge wazuh-agent
-    echo "[✔] Wazuh Agent removed."
+    echo "Wazuh Agent removed."
 fi
 
 # Remove existing Wazuh Manager if found
 if dpkg -l | grep -qw wazuh-manager; then
-    echo "[!] Wazuh Manager detected. Removing..."
+    echo "Wazuh Manager detected. Removing..."
     sudo systemctl stop wazuh-manager
     sudo systemctl disable wazuh-manager
     sudo dpkg --purge wazuh-manager
-    echo "[✔] Wazuh Manager removed."
+    echo "Wazuh Manager removed."
 fi
 
 # Download latest supported Wazuh Agent package
