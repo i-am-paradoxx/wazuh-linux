@@ -30,7 +30,7 @@ For Wazuh Managaer and Wazuh Dashboard
 Make sure you have curl installed if not then use the following command:
 
 ```
-sudo apt update -y && sudo apt upgrade -y
+sudo apt update -y
 sudo apt install curl -y
 ```
 ### Step 2
@@ -134,24 +134,34 @@ They collect security data and log information from the host system and send it 
 
 I will be using Debian Machine for Wazuh Agent
 
-Download and excute the following script Make sure you have curl installed
-
-
+Run the following command in your debian machine ,Make sure you have curl installed
+### step 1
 ```
 sudo curl -s https://raw.githubusercontent.com/iamsinnerr/wazuhh/main/Linux-Install.sh | bash
 ```
+### Step 2
+start and enable Wazuh-agent
 ```
 sudo systemctl daemon-reload
 sudo systemctl enable wazuh-agent
 sudo systemctl start wazuh-agent
 ```
+### Uninstalling Wazuh-Agent
+### step 1
+Stop and Disable Wazuh Agent
 ```
 sudo systemctl stop wazuh-agent
 sudo systemctl disable wazuh-agent
 ```
+### Step 2
+Remove Wazuh Agent
 ```
-sudo dpkg --purge wazuh-agent
 sudo rm -rf /var/ossec
+sudo dpkg --purge wazuh-agent
+```
+### Step 3 
+verify Uninstallation
+```
 dpkg -l | grep wazuh
 ```
 visit [Wazuh Documentaion](https://documentation.wazuh.com/current/getting-started/index.html) for more details.
