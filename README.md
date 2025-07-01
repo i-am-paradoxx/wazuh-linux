@@ -22,10 +22,6 @@ currently Wazuh supports the following operating system versions:
 - Amazon Linux 2023  
 
 ### Installation procees
-
-i will be using Ubuntu 22.04
-For Wazuh Managaer and Wazuh Dashboard 
-
 ### Step 1
 Make sure you have curl installed if not then use the following command:
 
@@ -53,7 +49,7 @@ You can access the dashboard by navigating to:
 or 
 - `https://localhost`
 
-if you forgot your password then use this command
+If you forgot your password then use this command
 
 ```
 sudo tar -O -xvf wazuh-install-files.tar wazuh-install-files/wazuh-passwords.txt
@@ -67,14 +63,14 @@ sudo systemctl status wazuh-dashboard
 sudo systemctl status filebeat
 ```
 
-if not started use the following command to start
+If not started use the following command to start
 ```
 sudo systemctl start wazuh-manager
 sudo systemctl start wazuh-dashboard
 sudo systemctl start filebeat
 ```
 
-to enable wazuh at start up 
+To enable wazuh at start up 
 ```
 sudo systemctl enable wazuh-manager
 sudo systemctl enable wazuh-dashboard
@@ -97,19 +93,16 @@ sudo systemctl stop wazuh-indexer
 ```
 
 ### Step 2
-disable wazuh at start up
+Disable wazuh at start up
 ```
 sudo systemctl disable wazuh-manager
 sudo systemctl disable wazuh-dashboard
 sudo systemctl disable filebeat
 sudo systemctl disable wazuh-indexer
 ```
-uninstall wazuh Packages
-```
-sudo dpkg --purge wazuh-manager wazuh-dashboard filebeat wazuh-indexer
-```
+
 ### Step 3
-remove config and data
+Remove config
 ```
 sudo rm -rf /var/ossec
 sudo rm -rf /etc/filebeat
@@ -118,14 +111,17 @@ sudo rm -rf /etc/wazuh-indexer
 sudo rm -rf /var/lib/wazuh-indexer
 sudo rm -rf /usr/share/wazuh-indexer
 sudo rm -rf /var/log/wazuh-indexer
-
+```
+Uninstall wazuh Packages
+```
+sudo dpkg --purge wazuh-manager wazuh-dashboard filebeat wazuh-indexer
 ```
 
-verify uninstallation
+### Step 4
+Verify uninstallation
 ```
 dpkg -l | grep wazuh
 ```
-
 
 # Wazuh-agent
 ### Installing Wazuh Agent
@@ -140,7 +136,7 @@ Run the following command in your debian machine ,Make sure you have curl instal
 sudo curl -s https://raw.githubusercontent.com/iamsinnerr/wazuhh/main/Linux-Install.sh | bash
 ```
 ### Step 2
-start and enable Wazuh-agent
+Start and Enable Wazuh-agent
 ```
 sudo systemctl daemon-reload
 sudo systemctl enable wazuh-agent
@@ -160,7 +156,7 @@ sudo rm -rf /var/ossec
 sudo dpkg --purge wazuh-agent
 ```
 ### Step 3 
-verify Uninstallation
+Verify Uninstallation
 ```
 dpkg -l | grep wazuh
 ```
