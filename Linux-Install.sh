@@ -3,7 +3,7 @@
 
 read -rp "Enter your Wazuh Manager IP: " WAZUH_MANAGER < /dev/tty
 # Ask user for Wazuh Agent Name
-read -rp "Enter a name for this Wazuh Agent: " WAZUH_AGENT_NAME < /dev/tty
+read -rp "Enter a name for this Wazuh Agent Make sure the user name is Unique: " WAZUH_AGENT_NAME < /dev/tty
 
 echo "Checking for existing Wazuh packages..."
 
