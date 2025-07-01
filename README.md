@@ -80,6 +80,10 @@ sudo systemctl enable filebeat
 ```
 sudo /var/ossec/bin/manage_agents
 ```
+### To see active agents
+```
+sudo /var/ossec/bin/agent_control -l
+```
 
 ### Uninstalling Process
 
@@ -142,6 +146,11 @@ sudo systemctl daemon-reload
 sudo systemctl enable wazuh-agent
 sudo systemctl start wazuh-agent
 ```
+Check for status
+```
+sudo grep ^status /var/ossec/var/run/wazuh-agentd.state
+```
+
 ### Uninstalling Wazuh-Agent
 ### step 1
 Stop and Disable Wazuh Agent
