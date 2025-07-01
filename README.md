@@ -4,7 +4,7 @@ Wazuh is a free, open-source security platform that monitors systems, detects th
 - Log analysis
 - Intrusion detection
 - File integrity monitoring
-- 
+  
 ### Wazuh Manager And Dashboard
 currently Wazuh supports the following operating system versions:
 
@@ -27,7 +27,7 @@ i will be using Ubuntu 22.04
 For Wazuh Managaer and Wazuh Dashboard 
 
 ### Step 1
-Make sure you have curl install if not then use the following command:
+Make sure you have curl installed if not then use the following command:
 
 ```
 sudo apt update -y && upgrade -y
