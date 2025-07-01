@@ -84,6 +84,7 @@ Stop Wazuh
 sudo systemctl stop wazuh-manager
 sudo systemctl stop wazuh-dashboard
 sudo systemctl stop filebeat
+sudo systemctl stop wazuh-indexer
 ```
 
 ### Step 2
@@ -92,10 +93,11 @@ disable wazuh at start up
 sudo systemctl disable wazuh-manager
 sudo systemctl disable wazuh-dashboard
 sudo systemctl disable filebeat
+sudo systemctl disable wazuh-indexer
 ```
 uninstall wazuh Packages
 ```
-sudo dpkg --purge wazuh-manager wazuh-dashboard filebeat
+sudo dpkg --purge wazuh-manager wazuh-dashboard filebeat wazuh-indexer
 ```
 ### Step 3
 remove config and data
@@ -103,6 +105,11 @@ remove config and data
 sudo rm -rf /var/ossec
 sudo rm -rf /etc/filebeat
 sudo rm -rf /usr/share/wazuh-dashboard
+sudo rm -rf /etc/wazuh-indexer
+sudo rm -rf /var/lib/wazuh-indexer
+sudo rm -rf /usr/share/wazuh-indexer
+sudo rm -rf /var/log/wazuh-indexer
+
 ```
 
 verify uninstallation
