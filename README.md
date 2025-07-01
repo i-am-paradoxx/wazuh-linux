@@ -161,3 +161,13 @@ Verify Uninstallation
 dpkg -l | grep wazuh
 ```
 visit [Wazuh Documentaion](https://documentation.wazuh.com/current/getting-started/index.html) for more details.
+# Credits
+
+This project makes use of resources and code from:
+
+- [Wazuh GitHub Repository](https://github.com/wazuh/wazuh)
+- [Wazuh Official Website](https://wazuh.com)
+
+I thank the Wazuh team for their contributions to the open-source community.
+
+
