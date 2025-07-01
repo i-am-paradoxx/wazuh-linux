@@ -45,6 +45,14 @@ You can access the dashboard by navigating to:
 or 
 - https://localhost
 
+
+if you forgot your password then use this command
+
+```
+sudo tar -O -xvf wazuh-install-files.tar wazuh-install-files/wazuh-passwords.txt
+```
+
+
 # Wazuh-agent
 Wazuh agents are software components installed on the endpoints or end devices (servers, workstations, cloud instances, etc.) you want to monitor. 
 They collect security data and log information from the host system and send it to the Wazuh Manager for analysis and further processing.
