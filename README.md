@@ -1,5 +1,10 @@
 # Wazuh
-
+Wazuh is a free, open-source security platform that monitors systems, detects threats, analyzes logs, and ensures compliance. It combines `SIEM` ( Security Information and Event Management )and `HIDS`( Host-based Intrusion Detection System ) capabilities to protect endpoints and servers in real time.
+- Threat detection
+- Log analysis
+- Intrusion detection
+- File integrity monitoring
+- 
 ### Wazuh Manager And Dashboard
 currently Wazuh supports the following operating system versions:
 
