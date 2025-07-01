@@ -131,8 +131,18 @@ Download and excute the following script Make sure you have curl installed
 ```
 sudo curl -s https://raw.githubusercontent.com/iamsinnerr/wazuhh/main/Linux-Install.sh | bash
 ```
+```
 sudo systemctl daemon-reload
 sudo systemctl enable wazuh-agent
 sudo systemctl start wazuh-agent
-
+```
+```
+sudo systemctl stop wazuh-agent
+sudo systemctl disable wazuh-agent
+```
+```
+sudo dpkg --purge wazuh-agent
+sudo rm -rf /var/ossec
+dpkg -l | grep wazuh
+```
 visit [Wazuh Documentaion](https://documentation.wazuh.com/current/getting-started/index.html) for more details.
