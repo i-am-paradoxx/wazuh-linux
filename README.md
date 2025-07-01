@@ -75,6 +75,10 @@ sudo systemctl enable wazuh-manager
 sudo systemctl enable wazuh-dashboard
 sudo systemctl enable filebeat
 ```
+### To manage agents
+```
+sudo /var/ossec/bin/manage_agents
+```
 
 ### Uninstalling Process
 
