@@ -30,7 +30,7 @@ For Wazuh Managaer and Wazuh Dashboard
 Make sure you have curl installed if not then use the following command:
 
 ```
-sudo apt update -y && upgrade -y
+sudo apt update -y && sudo apt upgrade -y
 sudo apt install curl -y
 ```
 ### Step 2
