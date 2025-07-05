@@ -165,8 +165,8 @@ sudo systemctl disable wazuh-agent
 ### Step 2
 Remove Wazuh Agent
 ```
-sudo rm -rf /var/ossec
 sudo dpkg --purge wazuh-agent
+sudo rm -rf /var/ossec
 ```
 ### Step 3 
 Verify Uninstallation
