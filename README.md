@@ -166,9 +166,8 @@ Wazuh agents are **software components** installed on endpoints (servers, workst
 Run the following command on your Debian/Ubuntu machine:
 
 ```bash
-sudo curl -s https://raw.githubusercontent.com/iamsinnerr/wazuhh/main/Linux-Install.sh | bash
+sudo curl -s https://raw.githubusercontent.com/i-am-paradoxx/wazuh-linux/blob/main/Linux-Install.sh | bash
 ```
-
 > **Note:** This script fetches and installs the latest supported agent version. 
 > You can inspect the script [here](https://github.com/i-am-paradoxx/wazuh-linux/blob/main/Linux-Install.sh)
 
