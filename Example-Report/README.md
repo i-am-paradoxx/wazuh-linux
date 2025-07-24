@@ -652,13 +652,6 @@ flowchart TD
     C --> D[Develop Response Playbooks]
     D --> E[Establish Metrics]
     E --> F[Continuous Improvement]
-    
-    style A fill:#e1f5fe
-    style B fill:#f3e5f5
-    style C fill:#e8f5e8
-    style D fill:#fff3e0
-    style E fill:#fce4ec
-    style F fill:#f1f8e9
 ```
 
 1. **Deploy**: Use provided installation scripts from [`wazuh-linux`](https://github.com/i-am-paradoxx/wazuh-linux) repository
@@ -728,14 +721,6 @@ sudo /var/ossec/bin/agent_control -l
 **Version**: 1.0  
 **Classification**: Internal Use  
 **Next Review**: January 24, 2026
-
----
-
-### Related Resources
-
-[![Wazuh Official](https://img.shields.io/badge/Wazuh-Official_Docs-blue?style=flat-square&logo=wazuh)](https://documentation.wazuh.com/)
-[![GitHub Repo](https://img.shields.io/badge/GitHub-wazuh--linux-black?style=flat-square&logo=github)](https://github.com/i-am-paradoxx/wazuh-linux)
-[![Security](https://img.shields.io/badge/Security-Best_Practices-red?style=flat-square&logo=security)](https://wazuh.com/use-cases/)
 
 ---
 
