@@ -3,8 +3,6 @@
 
 **A comprehensive guide for installing and configuring Wazuh on Linux systems**
 
-**Enterprise Security Monitoring Made Simple**
-
 </div>
 
 ---
