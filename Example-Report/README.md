@@ -1,15 +1,9 @@
 # Wazuh File Integrity Monitoring (FIM) Report
 
-[![Wazuh](https://img.shields.io/badge/Wazuh-4.5.4-blue?style=for-the-badge&logo=wazuh)](https://wazuh.com/)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
-[![Security](https://img.shields.io/badge/Security-FIM-red?style=for-the-badge&logo=security)](https://documentation.wazuh.com/)
-[![Linux](https://img.shields.io/badge/Linux-Compatible-yellow?style=for-the-badge&logo=linux)](https://github.com/i-am-paradoxx/wazuh-linux)
-
 <div align="center">
 
 **Security Monitoring Analysis Report**  
 **Focus:** File Integrity Monitoring Implementation and Examples  
-**Date:** July 24, 2025
 
 </div>
 
@@ -34,20 +28,9 @@
 
 ## Executive Summary
 
-> **TL;DR:** This comprehensive report demonstrates how to implement enterprise-grade File Integrity Monitoring using Wazuh's open-source security platform, featuring real-world examples, practical configurations, and measurable business impact.
+> **TL;DR:** This comprehensive report demonstrates how to implement enterprise-grade File Integrity Monitoring using Wazuh's open-source security platform, featuring real-world examples, practical configurations.
 
-This report provides a comprehensive analysis of **Wazuh's File Integrity Monitoring (FIM)** capabilities, including practical examples, configuration scenarios, and real-world use cases. Based on the analysis of the [`i-am-paradoxx/wazuh-linux`](https://github.com/i-am-paradoxx/wazuh-linux) repository, this document demonstrates how organizations can implement robust file monitoring solutions using Wazuh's open-source security platform.
-
-### Key Highlights
-
-| Metric | Result |
-|-----------|-----------|
-| **Detection Time** | 99.7% improvement (72h → 15min) |
-| **ROI First Year** | 1,062% return on investment |
-| **Security Incidents** | 75% reduction (12 → 3 per year) |
-| **Compliance Efficiency** | 80% reduction in audit time |
-
----
+This report provides a comprehensive analysis of **Wazuh's File Integrity Monitoring (FIM)** capabilities, including practical examples, configuration scenarios, and real-world use cases. this document demonstrates how organizations can implement robust file monitoring solutions using Wazuh's open-source security platform.
 
 ## Introduction to Wazuh File Integrity Monitoring
 
