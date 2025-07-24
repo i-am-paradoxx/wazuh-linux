@@ -1,10 +1,4 @@
 # Wazuh Linux Installation Guide
-
-[![Wazuh](https://img.shields.io/badge/Wazuh-4.5.4-blue?style=for-the-badge&logo=wazuh)](https://wazuh.com/)
-[![Linux](https://img.shields.io/badge/Linux-Compatible-yellow?style=for-the-badge&logo=linux)](https://github.com/i-am-paradoxx/wazuh-linux)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
-[![Shell](https://img.shields.io/badge/Shell-100%25-brightgreen?style=for-the-badge&logo=gnu-bash)](https://github.com/i-am-paradoxx/wazuh-linux)
-
 <div align="center">
 
 **A comprehensive guide for installing and configuring Wazuh on Linux systems**
