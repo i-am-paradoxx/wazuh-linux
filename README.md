@@ -1,112 +1,143 @@
-# Wazuh
-Wazuh is a free, open-source security platform that monitors systems, detects threats, analyzes logs, and ensures compliance. It combines `SIEM` ( Security Information and Event Management ) and `HIDS`( Host-based Intrusion Detection System ) capabilities to protect endpoints and servers in real time.
-- Threat detection
-- Log analysis
-- Intrusion detection
-- File integrity monitoring
-  
+# Wazuh Linux Installation Guide
+
+[![Wazuh](https://img.shields.io/badge/Wazuh-4.5.4-blue?style=for-the-badge&logo=wazuh)](https://wazuh.com/)
+[![Linux](https://img.shields.io/badge/Linux-Compatible-yellow?style=for-the-badge&logo=linux)](https://github.com/i-am-paradoxx/wazuh-linux)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+[![Shell](https://img.shields.io/badge/Shell-100%25-brightgreen?style=for-the-badge&logo=gnu-bash)](https://github.com/i-am-paradoxx/wazuh-linux)
+
+<div align="center">
+
+**A comprehensive guide for installing and configuring Wazuh on Linux systems**
+
+**Enterprise Security Monitoring Made Simple**
+
+</div>
+
+---
+
+## About Wazuh
+
+Wazuh is a **free, open-source security platform** that monitors systems, detects threats, analyzes logs, and ensures compliance. It combines **SIEM** (Security Information and Event Management) and **HIDS** (Host-based Intrusion Detection System) capabilities to protect endpoints and servers in real time.
+
+### Key Features
+
+- **Threat Detection** - Real-time monitoring and alerting
+- **Log Analysis** - Comprehensive log management and correlation
+- **Intrusion Detection** - Advanced threat detection capabilities
+- **File Integrity Monitoring** - Track changes to critical files
+---
+
+## Supported Operating Systems
+
 ### Wazuh Manager And Dashboard
-currently Wazuh supports the following operating system versions:
 
-- Ubuntu 16.04  
-- Ubuntu 18.04  
-- Ubuntu 20.04  
-- Ubuntu 22.04  
-- Ubuntu 24.04  
-- Red Hat Enterprise Linux 7  
-- Red Hat Enterprise Linux 8  
-- Red Hat Enterprise Linux 9  
-- CentOS 7  
-- CentOS 8  
-- Amazon Linux 2  
-- Amazon Linux 2023  
+Currently Wazuh supports the following operating system versions:
 
-### Installation procees
-### Step 1
-Make sure you have curl installed if not then use the following command:
+| OS Family | Versions |
+|-----------|----------|
+| **Ubuntu** | 16.04, 18.04, 20.04, 22.04, 24.04 |
+| **Red Hat Enterprise Linux** | 7, 8, 9 |
+| **CentOS** | 7, 8 |
+| **Amazon Linux** | 2, 2023 |
 
-```
+---
+
+## Installation Guide
+
+### Prerequisites
+
+Ensure you have `curl` installed on your system:
+
+```bash
 sudo apt update -y
 sudo apt install curl -y
 ```
-### Step 2
-To install Wazuh Manager and Dashboard on Ubuntu 22.04, use:
 
-```
+### Wazuh Manager & Dashboard Installation
+
+#### Step 1: Download and Install
+
+Install Wazuh Manager and Dashboard on Ubuntu 22.04:
+
+```bash
 sudo curl -sO https://packages.wazuh.com/4.5/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
 ```
-### Step 3
 
-After installation, access the dashboard and log in using the default admin user.
+#### Step 2: Access Dashboard
 
-- `User : admin`
-- `Password : <ADMIN_PASSWORD>`
+After installation, access the dashboard using the default admin credentials:
 
-Access Wazuh-Dashboard:
+| Field | Value |
+|-------|-------|
+| **User** | `admin` |
+| **Password** | `<ADMIN_PASSWORD>` |
 
+**Dashboard URLs:**
 - `https://<WAZUH_DASHBOARD_IP_ADDRESS>`
 - `https://localhost`
 
-
-If you forgot your password then use this command
-
-```
+**Forgot Password?** Retrieve it using:
+```bash
 sudo tar -O -xvf wazuh-install-files.tar wazuh-install-files/wazuh-passwords.txt
 ```
-### Step 4
 
-To check Wazuh-Manager status:
-```
+#### Step 3: Service Management
+
+**Check Service Status:**
+```bash
 sudo systemctl status wazuh-manager
 sudo systemctl status wazuh-dashboard
 sudo systemctl status filebeat
 ```
 
-If not started use the following command to start
-```
+**Start Services (if not running):**
+```bash
 sudo systemctl start wazuh-manager
 sudo systemctl start wazuh-dashboard
 sudo systemctl start filebeat
 ```
 
-To enable wazuh at start up 
-```
+**Enable Services at Startup:**
+```bash
 sudo systemctl enable wazuh-manager
 sudo systemctl enable wazuh-dashboard
 sudo systemctl enable filebeat
 ```
-### To manage agents
-```
+
+### Agent Management
+
+**Manage Agents:**
+```bash
 sudo /var/ossec/bin/manage_agents
 ```
-### To see active agents
-```
+
+**View Active Agents:**
+```bash
 sudo /var/ossec/bin/agent_control -l
 ```
 
-### Uninstalling Process
+---
 
-### Step 1
-Stop Wazuh
-```
+## Uninstalling Wazuh Manager
+
+### Step 1: Stop Services
+```bash
 sudo systemctl stop wazuh-manager
 sudo systemctl stop wazuh-dashboard
 sudo systemctl stop filebeat
 sudo systemctl stop wazuh-indexer
 ```
 
-### Step 2
-Disable wazuh at start up
-```
+### Step 2: Disable Services
+```bash
 sudo systemctl disable wazuh-manager
 sudo systemctl disable wazuh-dashboard
 sudo systemctl disable filebeat
 sudo systemctl disable wazuh-indexer
 ```
 
-### Step 3
-Remove config
-```
+### Step 3: Remove Configuration Files
+```bash
 sudo rm -rf /var/ossec
 sudo rm -rf /etc/filebeat
 sudo rm -rf /usr/share/wazuh-dashboard
@@ -115,72 +146,117 @@ sudo rm -rf /var/lib/wazuh-indexer
 sudo rm -rf /usr/share/wazuh-indexer
 sudo rm -rf /var/log/wazuh-indexer
 ```
-Uninstall wazuh Packages
-```
+
+**Remove Packages:**
+```bash
 sudo dpkg --purge wazuh-manager wazuh-dashboard filebeat wazuh-indexer
 ```
 
-### Step 4
-Verify uninstallation
-```
+### Step 4: Verify Removal
+```bash
 dpkg -l | grep wazuh
 ```
 
-# Wazuh-agent
-### Installing Wazuh Agent
-Wazuh agents are software components installed on the endpoints or end devices (servers, workstations, cloud instances, etc.) you want to monitor. 
-They collect security data and log information from the host system and send it to the Wazuh Manager for analysis and further processing.
+---
 
-I will be using Debian Machine for Wazuh Agent
+## Wazuh Agent Installation
 
-Run the following command in your debian machine ,Make sure you have curl installed
+### About Wazuh Agents
 
-### step 1
-```
+Wazuh agents are **software components** installed on endpoints (servers, workstations, cloud instances, etc.) that you want to monitor. They collect security data and log information from the host system and send it to the Wazuh Manager for analysis and further processing.
+
+### Agent Installation Process
+
+**Prerequisites:** Ensure `curl` is installed on your target machine.
+
+#### Step 1: Automated Installation
+
+Run the following command on your Debian/Ubuntu machine:
+
+```bash
 sudo curl -s https://raw.githubusercontent.com/iamsinnerr/wazuhh/main/Linux-Install.sh | bash
 ```
 
-This script fetches and installs the latest supported agent version. 
-You can inspect the script here [Linux-Install](https://github.com/i-am-paradoxx/wazuh-linux/blob/main/Linux-Install.sh)
+> **Note:** This script fetches and installs the latest supported agent version. 
+> You can inspect the script [here](https://github.com/i-am-paradoxx/wazuh-linux/blob/main/Linux-Install.sh)
 
-### Step 2
-Start and Enable Wazuh-agent
-```
+#### Step 2: Enable and Start Agent
+
+```bash
 sudo systemctl daemon-reload
 sudo systemctl enable wazuh-agent
 sudo systemctl start wazuh-agent
 ```
-Check for status
-```
+
+**Check Agent Status:**
+```bash
 sudo grep ^status /var/ossec/var/run/wazuh-agentd.state
 ```
 
-### Uninstalling Wazuh-Agent
-### step 1
-Stop and Disable Wazuh Agent
-```
+---
+
+## Uninstalling Wazuh Agent
+
+### Step 1: Stop and Disable
+```bash
 sudo systemctl stop wazuh-agent
 sudo systemctl disable wazuh-agent
 ```
-### Step 2
-Remove Wazuh Agent
-```
+
+### Step 2: Remove Agent
+```bash
 sudo dpkg --purge wazuh-agent
 sudo rm -rf /var/ossec
 ```
-### Step 3 
-Verify Uninstallation
-```
+
+### Step 3: Verify Removal
+```bash
 dpkg -l | grep wazuh
 ```
-visit [Wazuh Documentaion](https://documentation.wazuh.com/current/getting-started/index.html) for more details.
-# Credits
+
+---
+
+## Additional Resources
+
+For more detailed information, visit the [Wazuh Documentation](https://documentation.wazuh.com/current/getting-started/index.html).
+
+---
+
+## Credits
 
 This project makes use of resources and code from:
 
-- [Wazuh GitHub Repository](https://github.com/wazuh/wazuh)
-- [Wazuh Official Website](https://wazuh.com)
+- [**Wazuh GitHub Repository**](https://github.com/wazuh/wazuh) - Official Wazuh source code
+- [**Wazuh Official Website**](https://wazuh.com) - Documentation and resources
 
-I thank the Wazuh team for their contributions to the open-source community.
+**Special thanks** to the Wazuh team for their contributions to the open-source community.
 
+---
+
+<div align="center">
+
+## Quick Start Commands
+
+```bash
+# Install Wazuh Manager
+curl -sO https://packages.wazuh.com/4.5/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
+
+# Install Wazuh Agent  
+curl -s https://raw.githubusercontent.com/iamsinnerr/wazuhh/main/Linux-Install.sh | bash
+```
+
+---
+
+### Related Links
+
+[![Documentation](https://img.shields.io/badge/Documentation-Wazuh-blue?style=flat-square)](https://documentation.wazuh.com/)
+[![GitHub](https://img.shields.io/badge/GitHub-wazuh--linux-black?style=flat-square&logo=github)](https://github.com/i-am-paradoxx/wazuh-linux)
+[![Website](https://img.shields.io/badge/Website-wazuh.com-green?style=flat-square)](https://wazuh.com/)
+
+---
+
+**Questions or Issues?** Open an issue in this repository  
+**Found this helpful?** Give it a star on GitHub!
+
+</div>
 
