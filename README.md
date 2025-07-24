@@ -233,7 +233,7 @@ This project makes use of resources and code from:
 curl -sO https://packages.wazuh.com/4.5/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
 
 # Install Wazuh Agent  
-curl -s https://raw.githubusercontent.com/iamsinnerr/wazuhh/main/Linux-Install.sh | bash
+sudo curl -s https://raw.githubusercontent.com/i-am-paradoxx/wazuh-linux/main/Linux-Install.sh | bash
 ```
 
 ---
